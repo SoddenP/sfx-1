@@ -43,23 +43,31 @@ function firstenchant()
         for i = 1, #enchantstolock do
     
             if enchantstolock[i]:match(e1) then
-                matches = matches + 1
-                lockslot = 1
+                if (string.len(e1) >= string.len(enchantstolock[i]) then
+                    matches = matches + 1
+                    lockslot = 1
+                end
             end
             
             if enchantstolock[i]:match(e2) then
-                matches = matches + 1
-                lockslot = 2
+                if (string.len(e2) >= string.len(enchantstolock[i]) then
+                    matches = matches + 1
+                    lockslot = 2
+                end
             end
             
             if enchantstolock[i]:match(e3) then
-                matches = matches + 1
-                lockslot = 3
+                if (string.len(e3) >= string.len(enchantstolock[i]) then
+                    matches = matches + 1
+                    lockslot = 3
+                end
             end
             
             if enchantstolock[i]:match(e4) then
-                matches = matches + 1
-                lockslot = 4
+                if (string.len(e4) >= string.len(enchantstolock[i]) then
+                    matches = matches + 1
+                    lockslot = 4
+                end
             end
         end
     end
@@ -83,10 +91,22 @@ function secondenchant()
         
         for i = 1, #enchantstoget do
     
-            if (enchantstoget[i]:match(e2) or enchantstoget[i]:match(e3) or enchantstoget[i]:match(e4)) then
-                
-                matches = matches + 1
-                
+            if enchantstoget[i]:match(e2) then
+                if (string.len(e2) >= string.len(enchantstoget[i])) then
+                    matches = matches + 1
+                end
+            end
+            
+            if enchantstoget[i]:match(e3) then
+                if (string.len(e3) >= string.len(enchantstoget[i])) then
+                    matches = matches + 1
+                end
+            end
+            
+            if enchantstoget[i]:match(e4) then
+                if (string.len(e4) >= string.len(enchantstoget[i]))then
+                    matches = matches + 1
+                end
             end
         end
     end
