@@ -113,6 +113,14 @@ function secondenchant()
     return matches
 end
 
+for i = 1, #enchantstolock do
+    for j = 1, #enchantstoget do
+        if (enchantstolock[i]:match(enchantstoget[j])) then
+            return warn("Cannot use duplicate enchants between enchants to lock and enchants to get ith this script. Each enchant must appear only once.")
+        end
+    end
+end
+
 -- FIRST ENCHANT
 while wait() do
     
