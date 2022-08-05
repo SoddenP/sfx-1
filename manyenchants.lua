@@ -43,28 +43,28 @@ function firstenchant()
         for i = 1, #enchantstolock do
     
             if enchantstolock[i]:match(e1) then
-                if (string.len(e1) >= string.len(enchantstolock[i]) then
+                if (string.len(e1) >= string.len(enchantstolock[i])) then
                     matches = matches + 1
                     lockslot = 1
                 end
             end
             
             if enchantstolock[i]:match(e2) then
-                if (string.len(e2) >= string.len(enchantstolock[i]) then
+                if (string.len(e2) >= string.len(enchantstolock[i])) then
                     matches = matches + 1
                     lockslot = 2
                 end
             end
             
             if enchantstolock[i]:match(e3) then
-                if (string.len(e3) >= string.len(enchantstolock[i]) then
+                if (string.len(e3) >= string.len(enchantstolock[i])) then
                     matches = matches + 1
                     lockslot = 3
                 end
             end
             
             if enchantstolock[i]:match(e4) then
-                if (string.len(e4) >= string.len(enchantstolock[i]) then
+                if (string.len(e4) >= string.len(enchantstolock[i])) then
                     matches = matches + 1
                     lockslot = 4
                 end
@@ -91,20 +91,20 @@ function secondenchant()
         
         for i = 1, #enchantstoget do
     
-            if enchantstolock[i]:match(e2) then
-                if (string.len(e2) >= string.len(enchantstolock[i]) then
+            if enchantstoget[i]:match(e2) then
+                if (string.len(e2) >= string.len(enchantstoget[i])) then
                     matches = matches + 1
                 end
             end
             
-            if enchantstolock[i]:match(e3) then
-                if (string.len(e3) >= string.len(enchantstolock[i]) then
+            if enchantstoget[i]:match(e3) then
+                if (string.len(e3) >= string.len(enchantstoget[i])) then
                     matches = matches + 1
                 end
             end
             
-            if enchantstolock[i]:match(e4) then
-                if (string.len(e4) >= string.len(enchantstolock[i]) then
+            if enchantstoget[i]:match(e4) then
+                if (string.len(e4) >= string.len(enchantstoget[i]))then
                     matches = matches + 1
                 end
             end
@@ -162,7 +162,7 @@ while wait() do
     
         result = secondenchant()
         
-        if (result >= #enchantstolock) then
+        if (result >= #enchantstoget) then
             
             break
             
