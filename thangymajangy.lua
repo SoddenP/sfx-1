@@ -1,7 +1,5 @@
 repeat wait() until game.Players.LocalPlayer.Character
 
-usecodes = false
-
 local name = game.Players.LocalPlayer.Name
 
 local args = {
