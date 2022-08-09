@@ -1,3 +1,5 @@
+local RunService = game:GetService("RunService")
+
 local buy = {
     [1] = 0,
     [2] = "EnchanterServer",
@@ -169,14 +171,28 @@ while wait() do
         else
             
             if item.Config.EnchantLock.Value == "[]" then
-                
-                for i = 1, 50 do
-                    game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(buylock))
+    
+                lockspurchased = false
+                lockcount = 0
+                local connection
+                function getdatpeppahoffdere()
+                    if lockcount < 50 then
+                        lockcount = lockcount + 1
+                        game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(buylock))
+                    else
+                        lockspurchased = true
+                        connection:Disconnect()
+                    end
                 end
-                
+                connection = RunService.Heartbeat:Connect(getdatpeppahoffdere)
+
+                while not lockspurchased do
+                    wait()
+                end
+
                 game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(firstslot))
                 wait()
-                
+
             end
             
             game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(buy))
